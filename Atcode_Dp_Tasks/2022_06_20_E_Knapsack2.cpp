@@ -4,6 +4,7 @@ string sp=" ";
 #define ar array
 #define vc vector
 #define ll int64_t
+#define int int64_t
 #define mk make_pair 
 #define pb push_back
 #define gh cout<<endl;
@@ -23,7 +24,6 @@ string yes="YES\n",no="NO\n";
 #define Print_Return(K) {cout << K << endl; return;}
 #define Trav(A, P) for(auto P=A.begin(); P!=A.end(); P++)
 
-void __print(ll x) {cerr << x;}
 void __print(int x) {cerr << x;}
 void __print(double x) {cerr << x;}
 void __print(long double x) {cerr << x;}
@@ -78,55 +78,40 @@ const int mod = 1e9+7, MOD = 1e9+7, Zero = 0, One = 1, dom = 998244353, Infinite
 --------------------------------------------------------------------*/
 
 void solve(int TEST_CASE){
-    // if(TEST_CASE>1)hg;w(TEST_CASE);
+    if(TEST_CASE>1)hg;w(TEST_CASE);
     //cout<<"Case #"<<TEST_CASE<<":"<<sp;
-    int n=0, m=0, k=0, x=0, y=0, ians=0, temp=0;
-    string s, t, sans = "";
-    cin >> n;
-    vc<ar<int,2>> a(n), b(n);
-    int aMax = 0, bMax = 0, ai = -1, bi = -1;
-    Fo(i, 0, n-1){
-        cin >> a[i][0];
-        a[i][1] = i;
+    int n=0, m=0, k=0, x=0, y=0, ians=0, temp=0, W = 0;
+    string s, t;
+    cin >> n >> W;
+    vc<int> weight(n), value(n);
+    for(int i=0; i<n; i++){
+        cin >> weight[i] >> value[i];
     }
+    vc<int> dp(Mx15+1 , Plus_Infinite);
+    dp[0] = 0;
     Fo(i, 0, n-1){
-        cin >> b[i][0];
-        b[i][1] = i;
-    }
-    sort(rall(a));
-    sort(rall(b));
-    vc<int> ans(n, 0);
-    set<int> A, B;
-    int id = 0;
-    Fo(i, 0, n-1){
-        A.insert(a[i][1]);
-        B.insert(b[i][1]);
-        if(B.find(a[i][1])!=B.end()){
-            A.erase(a[i][1]);
-            B.erase(a[i][1]);
-        }
-        if(A.find(b[i][1])!=A.end()){
-            A.erase(b[i][1]);
-            B.erase(b[i][1]);
-        }
-        if(sz(A)==0 && sz(B)==0){
-            id = i;
-            break;
+        Ro(V, Mx15-value[i], 0){
+            Rmin(dp[V+value[i]], dp[V] + weight[i]);
         }
     }
-    Fo(i, 0, id)ans[a[i][1]] = 1;
-    for(int x: ans)cout << x;gh;
+    Fo(i, 0, Mx15){
+        if(dp[i]<=W){
+            Rmax(ians, i);
+        }
+    }
+    cout << ians << endl;
 }    
 
 int32_t main(){
     ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
     cout<<fixed<<setprecision(25);
-    int Test=1;//
-    cin >> Test;
+    int Test=1;//cin >> Test;
     for(int T=1; T<=Test; T++){
         solve(T);
     }
     //Time;
     return 0;
 }
+
+
             
