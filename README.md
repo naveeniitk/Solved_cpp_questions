@@ -17,3 +17,6 @@ a) Think of Elements connected as together as a chain like 1 to 2 to 3 etc.<br>
 ### 1651C: Fault_Tolerant_Network
 a) Implementation question[ nice one ]<br>
 b) Think of possible cases, which wires should be connected?<br>
+
+### 1649C: Weird_Sum
+a) Write the mathematical equation and then simplify using manhattan distance formula and taking the array in sorted order<br>
