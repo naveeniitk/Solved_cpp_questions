@@ -1,6 +1,6 @@
 # New Idea/Logic(s)
 
-### 1. 1695_Zero_Path
+### 1695_Zero_Path
 for every a[i][j] the possible values(path sum) it can take lies in a interval with a difference of 2.
 use this to store all possible path sums for (i, j).
 
@@ -10,3 +10,10 @@ b) now the parent of (c1, c2, c3) i.e. current node must be added the values as 
 c) if all the updates done in (c1, c2, c3..) are unable to make value of Parent in its range (< Min value of node) then one extra operation is req<br>
 d) then just make this node's value to be maximum permissible as it will be the last in the path of its update
 if they make it to the range than the current value of node is just min(values from childs(c1, c2, c3), max permissible value of node)<br>
+
+### 1670 : Where is the Pizza?
+a) Think of Elements connected as together as a chain like 1 to 2 to 3 etc.<br>
+
+### 1651C: Fault_Tolerant_Network
+a) Implementation question[ nice one ]<br>
+b) Think of possible cases, which wires should be connected?<br>
