@@ -20,3 +20,13 @@ b) Think of possible cases, which wires should be connected?<br>
 
 ### 1649C: Weird_Sum
 a) Write the mathematical equation and then simplify using manhattan distance formula and taking the array in sorted order<br>
+
+### The enchanted Forest
+a) think about splitting problem into cases (k>=n && k<n) <br>
+b) don't dive to think it might be a dp problem<br>
+
+### 1702_E_Split_Into_Two_Sets
+1) Think of using Graphs & cycles <br>
+2) what about bipartite?<br>
+3) Dsu ?<br>
+4) might add some dummy nodes like for (x, y) -> [x, y+n] and [x+n, y] <br>
